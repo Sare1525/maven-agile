@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pulls the latest code from your repository
-                git branch: 'main', url: 'https://github.com'
+                git branch: 'main', url: 'https://github.com/Sare1525/maven-agile.git'
             }
         }
         
