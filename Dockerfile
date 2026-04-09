@@ -1,15 +1,8 @@
-# Use a lightweight Java runtime as a base
+# Use a Java runtime
 FROM openjdk:11-jre-slim
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the JAR file built by Maven into the container
-# Note: Ensure 'mvn clean package' was run so the target folder exists
+# Copy the jar file from the target folder to the container
 COPY target/*.jar app.jar
-
-# Expose the port your app runs on
+# Expose the port
 EXPOSE 8080
-
-# Command to run the application
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
