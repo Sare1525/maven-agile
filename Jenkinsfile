@@ -15,11 +15,13 @@ pipeline {
                 bat 'mvn clean package -DskipTests' 
             }
         }
-        stage('Containerize (Docker)') {
-            steps {
-                // Use 'bat' for Docker commands too
-                bat 'docker build -t sare1525/maven-agile:latest .'
-            }
+       stage('Containerize (Docker)') {
+    steps {
+        bat 'docker --version' // Verify docker is accessible
+        bat 'docker build -t sare1525/maven-agile:latest .'
+    }
+}
+
         }
         stage('Deploy to K8s') {
             steps {
