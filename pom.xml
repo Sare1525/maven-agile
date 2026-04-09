@@ -1,0 +1,13 @@
+<project xmlns="http://apache.org" xmlns:xsi="http://w3.org"
+  xsi:schemaLocation="http://apache.org http://apache.org">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.vit.riviera</groupId>
+  <artifactId>maven-agile</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>maven-agile</name>
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+</project>
