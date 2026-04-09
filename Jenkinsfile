@@ -6,22 +6,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Sare1525/maven-agile.git'
+                git branch: 'main', url: 'https://github.com'
             }
         }
         stage('Build & Test') {
             steps {
-                // Use 'bat' instead of 'sh' for Windows
-                bat 'mvn clean package -DskipTests' 
+                bat 'mvn clean package -DskipTests'
             }
         }
-       stage('Containerize (Docker)') {
-    steps {
-        bat 'docker --version' // Verify docker is accessible
-        bat 'docker build -t sare1525/maven-agile:latest .'
-    }
-}
-
+        stage('Containerize (Docker)') {
+            steps {
+                // This 'bat' command is required for Windows
+                bat 'docker build -t sare1525/maven-agile:latest .'
+            }
         }
         stage('Deploy to K8s') {
             steps {
